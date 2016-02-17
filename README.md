@@ -1,4 +1,3 @@
-# Windows Phone 8 Developer Cheat Sheet
 <html>
 	<head>
 		<title></title>
@@ -98,28 +97,28 @@
 			3. Styling:</div>
 		<blockquote>
 			<div>
-				&lt;TextBlock Style=&quot;{StaticResource TextNormalStyle}&quot;/&gt;</div>
+				&lt;TextBlock Style=&quot;{StaticResource <span style="color:#ff0000;">TextNormalStyle</span>}&quot;/&gt;</div>
 			<div>
-				-&gt; TextNormalStyle is Style return inside &lt;Page.Resources&gt;&lt;/Page.Resources&gt; like this</div>
+				<span style="color:#ff0000;">TextNormalStyle </span>is Style return inside &lt;Page.Resources&gt;&lt;/Page.Resources&gt; like this</div>
 			<div>
 				&lt;Style x:Key=&quot;TextNormalStyle&quot; TargetType=&quot;TextBlock&quot;&gt;</div>
-			<div>
+			<div style="margin-left: 40px;">
 				&lt;Setter Property=&quot;FontSize&quot; Value=&quot;24&quot; /&gt;</div>
-			<div>
+			<div style="margin-left: 40px;">
 				&lt;Setter Property=&quot;FontWeight&quot; Value=&quot;Bold&quot; /&gt;</div>
 			<div>
 				&lt;/Style&gt;</div>
 		</blockquote>
 		<div>
-			-&gt; or styles can be maintained in different xaml file and referred inside page resources like this</div>
+			or styles can be maintained in different xaml file and referred inside page resources like this</div>
 		<blockquote>
 			<div>
 				&lt;Page.Resources&gt;</div>
-			<div>
+			<div style="margin-left: 40px;">
 				&lt;ResourceDictionary&gt;</div>
-			<div>
+			<div style="margin-left: 80px;">
 				&lt;ResourceDictionary Source=&quot;Assets/Styles.xaml&quot;/&gt;</div>
-			<div>
+			<div style="margin-left: 40px;">
 				&lt;/ResourceDictionary&gt;</div>
 			<div>
 				&lt;/Page.Resources&gt;</div>
@@ -127,19 +126,19 @@
 		<div>
 			4. Data Template:</div>
 		<div>
-			-&gt; Data Template is applied to define a control&#39;s appearance</div>
+			Data Template is applied to define a control&#39;s appearance</div>
 		<div>
 			eg.,&nbsp;</div>
 		<blockquote>
 			<div>
 				&lt;DataTemplate x:Key=&quot;CountryTemplate&quot;&gt;</div>
-			<div>
+			<div style="margin-left: 40px;">
 				&lt;StackPanel Orientation=&quot;Vertical&quot;&gt;</div>
-			<div>
+			<div style="margin-left: 80px;">
 				&lt;Image Src={Binding Path = ImageUrl}/&gt;</div>
-			<div>
+			<div style="margin-left: 80px;">
 				&lt;TextBlock Text={Binding Path=CountryName}/&gt;</div>
-			<div>
+			<div style="margin-left: 40px;">
 				&lt;StackPanel&gt;</div>
 			<div>
 				&lt;/DataTemplate&gt;</div>
@@ -165,13 +164,13 @@
 		<div>
 			Binds the Properties in the DataContext</div>
 		<div>
-			1. Binding a Property</div>
+			<strong>1. Binding a Property</strong></div>
 		<blockquote>
 			<div>
 				&lt;TextBox Text=&quot;{Binding Path=Name, Mode=TwoWay}&quot; /&gt;</div>
 		</blockquote>
 		<div>
-			2. Binding to Element</div>
+			<strong>2. Binding to Element</strong></div>
 		<blockquote>
 			<div>
 				&lt;TextBox x:Name=&quot;NewTextBox&quot;/&gt;</div>
@@ -179,7 +178,7 @@
 				&lt;TextBlock Text=&quot;{Binding ElementName=NewTextBox, Path=Text}&quot; /&gt;</div>
 		</blockquote>
 		<div>
-			3. INotifyPropertyChanged</div>
+			<strong>3. INotifyPropertyChanged</strong></div>
 		<ul>
 			<li>
 				Implement in the ViewModel to notify any property changes to the UI</li>
@@ -253,25 +252,25 @@
 		<div>
 			Eg.</div>
 		<div>
-			-&gt; Sending Value as Query String</div>
+			<strong>Sending Value as Query String</strong></div>
+		<blockquote>
+			<div>
+				string uri = string.Format(&quot;/Page1.xaml?name={0}&amp;&amp;rollno={1}&quot;, Name, Rollno);</div>
+			<div>
+				NavigationService.Navigate(new Uri(uri, UriKind.Relative));</div>
+		</blockquote>
 		<div>
-			&nbsp; &nbsp;string uri = string.Format(&quot;/Page1.xaml?name={0}&amp;&amp;rollno={1}&quot;, Name, Rollno);</div>
-		<div>
-			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //adding Navigation Statement</div>
-		<div>
-			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NavigationService.Navigate(new Uri(uri, UriKind.Relative));</div>
-		<div>
-			&nbsp;</div>
-		<div>
-			-&gt; Receiving Value</div>
-		<div>
-			protected override void OnNavigatedTo(NavigationEventArgs e)</div>
-		<div>
-			{</div>
-		<div>
-			var value = NavigationContext.QueryString.ContainsKey(&quot;id&quot;))</div>
-		<div>
-			}</div>
+			<strong>Receiving Value</strong></div>
+		<blockquote>
+			<div>
+				protected override void OnNavigatedTo(NavigationEventArgs e)</div>
+			<div>
+				{</div>
+			<div style="margin-left: 40px;">
+				var value = NavigationContext.QueryString.ContainsKey(&quot;id&quot;))</div>
+			<div>
+				}</div>
+		</blockquote>
 		<div>
 			&nbsp;</div>
 		<div>
