@@ -1,5 +1,5 @@
 # Windows Phone 8 Developer Cheat Sheet
-Folder Structure of Windows Phone
+<b>Folder Structure of Windows Phone </b>
 App.xaml 
 -> Starting point of every Windows Phone Application
 -> Initializes the application and the frame (which will contain pages)
