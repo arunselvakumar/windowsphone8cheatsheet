@@ -287,6 +287,106 @@
 				Events (in NavigationServices) : LoadCompleted, Navigated, Navigatign, NavigationFailed, NavigationProgress, NavigationStopped</li>
 		</ul>
 		<div>
+			<strong>Application LifeCycle of Windows Phone</strong></div>
+		<div>
 			&nbsp;</div>
+		<div style="text-align: center;">
+			<img alt="" src="https://lnluis.files.wordpress.com/2011/09/life-cycle-600x345.png" style="width: 600px; height: 345px;" /></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<div>
+				You can control the application lifecycle using PhoneApplicationService class which is in App.xaml</div>
+			<blockquote>
+				<div>
+					&lt;Application.ApplicationLifetimeObjects&gt;</div>
+				<div style="margin-left: 40px;">
+					&nbsp;&lt;shell:PhoneApplicationService &nbsp; &nbsp; &nbsp; Launching=&quot;Application_Launching&quot;&nbsp;</div>
+				<div style="margin-left: 280px;">
+					Closing=&quot;Application_Closing&quot;</div>
+				<div style="margin-left: 280px;">
+					Activated=&quot;Application_Activated&quot;</div>
+				<div style="margin-left: 280px;">
+					Deactivated=&quot;Application_Deactivated&quot;/&gt;</div>
+				<div>
+					&lt;/Application.ApplicationLifetimeObjects&gt;</div>
+			</blockquote>
+			<div>
+				&nbsp;</div>
+			<div>
+				<strong>Application_Launching : </strong>Invoked when app starts for first time</div>
+			<div>
+				<strong>Application_Closing : </strong>Invloked when the app is completly closed</div>
+			<div>
+				<strong>Application_Activated : </strong>Invoked when app is resumed from a suspended state</div>
+			<div>
+				<strong>Application_Deactvated :</strong> Invoked when app is suspended</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<strong>Checking if the Application is Dormanted or Tombstoned:</strong></div>
+			<blockquote>
+				<div>
+					private void Application_Activated(object sender, ActivatedEventArgs e)</div>
+				<div>
+					{</div>
+				<div style="margin-left: 40px;">
+					&nbsp;if (e.IsApplicationInstancePreserved)</div>
+				<div style="margin-left: 40px;">
+					&nbsp;{</div>
+				<div style="margin-left: 80px;">
+					&nbsp;Debug.WriteLine(&quot;The app was dormant&quot;);</div>
+				<div style="margin-left: 40px;">
+					&nbsp;}</div>
+				<div style="margin-left: 40px;">
+					&nbsp;else</div>
+				<div style="margin-left: 40px;">
+					&nbsp;{</div>
+				<div style="margin-left: 80px;">
+					&nbsp;Debug.WriteLine(&quot;The app was tombstoned&quot;);</div>
+				<div style="margin-left: 40px;">
+					&nbsp;}</div>
+				<div>
+					}</div>
+			</blockquote>
+			<div>
+				&nbsp;</div>
+			<div>
+				<strong>Orientation:</strong></div>
+			<div>
+				By default, every new page added to windows phone is displayed in portrait mode</div>
+			<div>
+				This behaviour can be controlled by attributes as follows:</div>
+			<blockquote>
+				<div>
+					&lt;phone:PhoneApplicationPage</div>
+				<div>
+					&nbsp;x:Class=&quot;Webinar.Rest.MainPage&quot;</div>
+				<div>
+					<span style="color:#008000;">&nbsp;SupportedOrientations=&quot;</span><span style="color:#ff0000;">Portrait</span><span style="color:#008000;">&quot; Orientation=&quot;</span><span style="color:#ff0000;">Portrait</span><span style="color:#008000;">&quot;</span></div>
+				<div>
+					<span style="color:#008000;">&nbsp;OrientationChanged=&quot;</span><span style="color:#ff0000;">MainPage_OnOrientationChanged</span><span style="color:#008000;">&quot;</span>&gt;</div>
+			</blockquote>
+			<div>
+				&nbsp;</div>
+			<blockquote>
+				<div>
+					private void <span style="color:#ff0000;">MainPage_OnOrientationChanged</span>(object sender, OrientationChangedEventArgs e)</div>
+				<div>
+					{</div>
+				<div style="margin-left: 40px;">
+					&nbsp;if (e.Orientation == PageOrientation.PortraitUp || e.Orientation == PageOrientation.PortraitDown)</div>
+				<div style="margin-left: 40px;">
+					&nbsp;{</div>
+				<div style="margin-left: 40px;">
+					&nbsp;</div>
+				<div style="margin-left: 40px;">
+					&nbsp;}</div>
+				<div>
+					}</div>
+			</blockquote>
+		</div>
+		<p>
+			&nbsp;</p>
 	</body>
 </html>
